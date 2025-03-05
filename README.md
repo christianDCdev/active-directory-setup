@@ -80,6 +80,61 @@ Welcome!  This project serves as the first step to Active Directory implementati
 
 <p>
 
-- 
+- Navigate to your DC-1 VM in Azure
+- Navigate to "Network Settings"
+- Click on "Network Interface / IP configuration" box
+<img src="https://i.imgur.com/doR4UIN.png" height="80%" width="80%" alt="NIC"/>
+
+- Click on "ipconfig1"
+- Under "Allocation", select "Static"
+<img src="https://i.imgur.com/sAXIAEH.png" height="80%" width="80%" alt="NIC"/>
+
+- Click "Save" and now your Domain Controller's private IP address will not change
+  
+</p>
+<br />
+<h3>&#9316; Connect to the Domain Controller with Remote Desktop</h3>
+
+<p>
+
+- Retrieve and copy public IP address of DC-1 VM
+- Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
+- NOTE: If you don't see "Server Manager" application in your VM, it means you are either in the wrong VM or created the wrong type of VM
+  
+</p>
+<br />
+<h3>&#9317; Disable Firewalls in the Domain Controller</h3>
+
+<p>
+
+- Within the DC-1 VM, navigate to "Windows Defender FIrewall with Advanced Security"
+<img src="https://i.imgur.com/3ZfNDpQ.png" height="80%" width="80%" alt="Firewall"/>
+
+- Click "Windows Defender Firewall Properties"
+- Turn off "Firewall State" in "Domain Profile", "Private Profile", and "Public Profile" tabs
+<img src="https://i.imgur.com/ukzHtgz.png" height="80%" width="80%" alt="Firewall state"/>
+
+- Click "Apply" and "Ok"
+- NOTE: Typically you probably wouldn't disable firewall settings, but for the sake of this project, we will disable them to prevent any comoplications
+  
+</p>
+<br />
+<h3>&#9318; Connect Client VM to Domain Controller VM</h3>
+
+<p>
+
+- Retrieve DC-1 VM private IP address and copy it
+- Navigate to Client-1 VM -> Network Settings -> click on "Network Interface / IP configuration" box
+- On the left side of window, click on "DNS servers"
+<img src="https://i.imgur.com/hRfjdJG.png" height="80%" width="80%" alt="DNS Servers Section"/>
+
+- Under "DNS servers", select the "Custom" option and paste the DC-1 private IP address
+<img src="https://i.imgur.com/1f4xTNN.png" height="80%" width="80%" alt="DNS custom server"/>
+
+- Click "Save"
+- Navigate to "Virtual Machines" in Azure
+- Select "Client-1" box
+- Click "Restart"
+<img src="https://i.imgur.com/tfNOG5V.png" height="80%" width="80%" alt="Restart Client VM"/>
   
 </p>
