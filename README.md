@@ -76,6 +76,7 @@ Welcome!  This project serves as the first step to Active Directory implementati
   
 </p>
 <br />
+
 <h3>&#9315; Set Domain Controller's Private IP Address to "Static"</h3>
 
 <p>
@@ -93,6 +94,7 @@ Welcome!  This project serves as the first step to Active Directory implementati
   
 </p>
 <br />
+
 <h3>&#9316; Connect to the Domain Controller with Remote Desktop</h3>
 
 <p>
@@ -103,6 +105,7 @@ Welcome!  This project serves as the first step to Active Directory implementati
   
 </p>
 <br />
+
 <h3>&#9317; Disable Firewalls in the Domain Controller</h3>
 
 <p>
@@ -115,10 +118,11 @@ Welcome!  This project serves as the first step to Active Directory implementati
 <img src="https://i.imgur.com/ukzHtgz.png" height="80%" width="80%" alt="Firewall state"/>
 
 - Click "Apply" and "Ok"
-- NOTE: Typically you probably wouldn't disable firewall settings, but for the sake of this project, we will disable them to prevent any comoplications
+- NOTE: Typically you probably wouldn't disable firewall settings, but for the sake of this project, we will disable them to prevent any complications.  Another way you could circumvent this is if you enable ICMP traffic in the firewall advanced settings.
   
 </p>
 <br />
+
 <h3>&#9318; Connect Client VM to Domain Controller VM</h3>
 
 <p>
@@ -137,4 +141,35 @@ Welcome!  This project serves as the first step to Active Directory implementati
 - Click "Restart"
 <img src="https://i.imgur.com/tfNOG5V.png" height="80%" width="80%" alt="Restart Client VM"/>
   
+</p>
+<br />
+
+<h3>&#9319; Connect to Client VM with Remote Desktop</h3>
+
+<p>
+
+- Retrieve and copy public IP address of Client-1 VM
+- Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
+  
+</p>
+<br />
+
+<h3>&#9320; Ensure Connectivity Between Domain Controller and Client</h3>
+
+<p>
+
+- Within the Client-1 VM, open PowerShell
+- Ping the Domain Controller by typing "ping(private IP address)" (Example: ping 10.0.0.4)
+- Observe and make sure the ping is successful
+<img src="https://i.imgur.com/8gzdCs6.png" height="80%" width="80%" alt="Ping domain controller"/>
+  
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+If you're reading this, then hopefully you have succesfully completed every step of this project.  This project has built the foundation for the following Active Directory projects.  Now that our Domain Controller and Client are connected and configured, we can dig deeper into more advanced implementations and configurations of Active Directory.
+
+- If you would like to continue to the next step in this series of Active Directory projects, please click <a href="https://github.com/christianDCdev/ad-deploy-and-config">here</a>
+
 </p>
